@@ -967,42 +967,6 @@
 <span id="925">925</span>
 <span id="926">926</span>
 <span id="927">927</span>
-<span id="928">928</span>
-<span id="929">929</span>
-<span id="930">930</span>
-<span id="931">931</span>
-<span id="932">932</span>
-<span id="933">933</span>
-<span id="934">934</span>
-<span id="935">935</span>
-<span id="936">936</span>
-<span id="937">937</span>
-<span id="938">938</span>
-<span id="939">939</span>
-<span id="940">940</span>
-<span id="941">941</span>
-<span id="942">942</span>
-<span id="943">943</span>
-<span id="944">944</span>
-<span id="945">945</span>
-<span id="946">946</span>
-<span id="947">947</span>
-<span id="948">948</span>
-<span id="949">949</span>
-<span id="950">950</span>
-<span id="951">951</span>
-<span id="952">952</span>
-<span id="953">953</span>
-<span id="954">954</span>
-<span id="955">955</span>
-<span id="956">956</span>
-<span id="957">957</span>
-<span id="958">958</span>
-<span id="959">959</span>
-<span id="960">960</span>
-<span id="961">961</span>
-<span id="962">962</span>
-<span id="963">963</span>
 </pre><pre class='rust '>
 <span class='comment'>// Copyright 2013 The Rust Project Developers. See the COPYRIGHT</span>
 <span class='comment'>// file at the top-level directory of this distribution and at</span>
@@ -1020,8 +984,6 @@
 <span class='doccomment'>//! # Examples</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! ```</span>
-<span class='doccomment'>//! # extern crate linked_hash_map;</span>
-<span class='doccomment'>//! # fn main() {</span>
 <span class='doccomment'>//! use linked_hash_map::LinkedHashMap;</span>
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! let mut map = LinkedHashMap::new();</span>
@@ -1034,7 +996,6 @@
 <span class='doccomment'>//!</span>
 <span class='doccomment'>//! let items: Vec&lt;(i32, i32)&gt; = map.iter().map(|t| (*t.0, *t.1)).collect();</span>
 <span class='doccomment'>//! assert_eq!(vec![(2, 20), (1, 10), (3, 30)], items);</span>
-<span class='doccomment'>//! # }</span>
 <span class='doccomment'>//! ```</span>
 
 <span class='attribute'>#<span class='op'>!</span>[<span class='ident'>feature</span>(<span class='ident'>box_patterns</span>)]</span>
@@ -1167,8 +1128,6 @@
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
     <span class='doccomment'>///</span>
@@ -1176,7 +1135,6 @@
     <span class='doccomment'>/// map.insert(2, &quot;b&quot;);</span>
     <span class='doccomment'>/// assert_eq!(map[&amp;1], &quot;a&quot;);</span>
     <span class='doccomment'>/// assert_eq!(map[&amp;2], &quot;b&quot;);</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>insert</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>k</span>: <span class='ident'>K</span>, <span class='ident'>v</span>: <span class='ident'>V</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>V</span><span class='op'>&gt;</span> {
         <span class='kw'>let</span> (<span class='ident'>node_ptr</span>, <span class='ident'>node_opt</span>, <span class='ident'>old_val</span>) <span class='op'>=</span> <span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>map</span>.<span class='ident'>get_mut</span>(<span class='kw-2'>&amp;</span><span class='ident'>KeyRef</span>{<span class='ident'>k</span>: <span class='kw-2'>&amp;</span><span class='ident'>k</span>}) {
@@ -1216,8 +1174,6 @@
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
     <span class='doccomment'>///</span>
@@ -1228,7 +1184,6 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(map.get(&amp;1), Some(&amp;&quot;a&quot;));</span>
     <span class='doccomment'>/// assert_eq!(map.get(&amp;2), Some(&amp;&quot;c&quot;));</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get</span><span class='op'>&lt;</span><span class='ident'>Q</span>: ?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>, <span class='ident'>k</span>: <span class='kw-2'>&amp;</span><span class='ident'>Q</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='ident'>V</span><span class='op'>&gt;</span> <span class='kw'>where</span> <span class='ident'>K</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>Q</span><span class='op'>&gt;</span>, <span class='ident'>Q</span>: <span class='ident'>Eq</span> <span class='op'>+</span> <span class='ident'>Hash</span> {
         <span class='self'>self</span>.<span class='ident'>map</span>.<span class='ident'>get</span>(<span class='ident'>Qey</span>::<span class='ident'>from_ref</span>(<span class='ident'>k</span>)).<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>e</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='ident'>e</span>.<span class='ident'>value</span>)
@@ -1239,8 +1194,6 @@
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
     <span class='doccomment'>///</span>
@@ -1249,7 +1202,6 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// *map.get_mut(&amp;1).unwrap() = &quot;c&quot;;</span>
     <span class='doccomment'>/// assert_eq!(map.get(&amp;1), Some(&amp;&quot;c&quot;));</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_mut</span><span class='op'>&lt;</span><span class='ident'>Q</span>: ?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>k</span>: <span class='kw-2'>&amp;</span><span class='ident'>Q</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>V</span><span class='op'>&gt;</span> <span class='kw'>where</span> <span class='ident'>K</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>Q</span><span class='op'>&gt;</span>, <span class='ident'>Q</span>: <span class='ident'>Eq</span> <span class='op'>+</span> <span class='ident'>Hash</span> {
         <span class='self'>self</span>.<span class='ident'>map</span>.<span class='ident'>get_mut</span>(<span class='ident'>Qey</span>::<span class='ident'>from_ref</span>(<span class='ident'>k</span>)).<span class='ident'>map</span>(<span class='op'>|</span><span class='ident'>e</span><span class='op'>|</span> <span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='ident'>e</span>.<span class='ident'>value</span>)
@@ -1263,8 +1215,6 @@
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
     <span class='doccomment'>///</span>
@@ -1275,7 +1225,6 @@
     <span class='doccomment'>/// assert_eq!(map.get_refresh(&amp;2), Some(&amp;&quot;b&quot;));</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!((&amp;2, &amp;&quot;b&quot;), map.iter().rev().next().unwrap());</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>get_refresh</span><span class='op'>&lt;</span><span class='ident'>Q</span>: ?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>k</span>: <span class='kw-2'>&amp;</span><span class='ident'>Q</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='kw-2'>&amp;</span><span class='ident'>V</span><span class='op'>&gt;</span> <span class='kw'>where</span> <span class='ident'>K</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>Q</span><span class='op'>&gt;</span>, <span class='ident'>Q</span>: <span class='ident'>Eq</span> <span class='op'>+</span> <span class='ident'>Hash</span> {
         <span class='kw'>let</span> (<span class='ident'>value</span>, <span class='ident'>node_ptr_opt</span>) <span class='op'>=</span> <span class='kw'>match</span> <span class='self'>self</span>.<span class='ident'>map</span>.<span class='ident'>get_mut</span>(<span class='ident'>Qey</span>::<span class='ident'>from_ref</span>(<span class='ident'>k</span>)) {
@@ -1300,8 +1249,6 @@
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
     <span class='doccomment'>///</span>
@@ -1311,7 +1258,6 @@
     <span class='doccomment'>/// assert_eq!(map.remove(&amp;2), Some(&quot;a&quot;));</span>
     <span class='doccomment'>/// assert_eq!(map.remove(&amp;2), None);</span>
     <span class='doccomment'>/// assert_eq!(map.len(), 0);</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>remove</span><span class='op'>&lt;</span><span class='ident'>Q</span>: ?<span class='ident'>Sized</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>, <span class='ident'>k</span>: <span class='kw-2'>&amp;</span><span class='ident'>Q</span>) <span class='op'>-&gt;</span> <span class='prelude-ty'>Option</span><span class='op'>&lt;</span><span class='ident'>V</span><span class='op'>&gt;</span> <span class='kw'>where</span> <span class='ident'>K</span>: <span class='ident'>Borrow</span><span class='op'>&lt;</span><span class='ident'>Q</span><span class='op'>&gt;</span>, <span class='ident'>Q</span>: <span class='ident'>Eq</span> <span class='op'>+</span> <span class='ident'>Hash</span> {
         <span class='kw'>let</span> <span class='ident'>removed</span> <span class='op'>=</span> <span class='self'>self</span>.<span class='ident'>map</span>.<span class='ident'>remove</span>(<span class='ident'>Qey</span>::<span class='ident'>from_ref</span>(<span class='ident'>k</span>));
@@ -1327,12 +1273,9 @@
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>/// let mut map: LinkedHashMap&lt;i32, &amp;str&gt; = LinkedHashMap::new();</span>
     <span class='doccomment'>/// let capacity = map.capacity();</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>capacity</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>usize</span> {
         <span class='self'>self</span>.<span class='ident'>map</span>.<span class='ident'>capacity</span>()
@@ -1345,8 +1288,6 @@
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
     <span class='doccomment'>/// map.insert(1, 10);</span>
@@ -1354,7 +1295,6 @@
     <span class='doccomment'>/// map.pop_front();</span>
     <span class='doccomment'>/// assert_eq!(map.get(&amp;1), None);</span>
     <span class='doccomment'>/// assert_eq!(map.get(&amp;2), Some(&amp;20));</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='attribute'>#[<span class='ident'>inline</span>]</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>pop_front</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) {
@@ -1385,8 +1325,6 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
@@ -1399,7 +1337,6 @@
     <span class='doccomment'>/// assert_eq!((&amp;&quot;c&quot;, &amp;30), iter.next().unwrap());</span>
     <span class='doccomment'>/// assert_eq!((&amp;&quot;b&quot;, &amp;20), iter.next().unwrap());</span>
     <span class='doccomment'>/// assert_eq!(None, iter.next());</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>iter</span>(<span class='kw-2'>&amp;</span><span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Iter</span><span class='op'>&lt;</span><span class='ident'>K</span>, <span class='ident'>V</span><span class='op'>&gt;</span> {
         <span class='ident'>Iter</span> {
@@ -1414,8 +1351,6 @@
     <span class='doccomment'>/// Iterator element type is `(&amp;&#39;a K, &amp;&#39;a mut V)`</span>
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
@@ -1431,7 +1366,6 @@
     <span class='doccomment'>/// }</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// assert_eq!(&amp;17, map.get(&amp;&quot;a&quot;).unwrap());</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>iter_mut</span>(<span class='kw-2'>&amp;</span><span class='kw-2'>mut</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>IterMut</span><span class='op'>&lt;</span><span class='ident'>K</span>, <span class='ident'>V</span><span class='op'>&gt;</span> {
         <span class='ident'>IterMut</span> {
@@ -1446,8 +1380,6 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
@@ -1460,7 +1392,6 @@
     <span class='doccomment'>/// assert_eq!(&amp;&#39;c&#39;, keys.next().unwrap());</span>
     <span class='doccomment'>/// assert_eq!(&amp;&#39;b&#39;, keys.next().unwrap());</span>
     <span class='doccomment'>/// assert_eq!(None, keys.next());</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>keys</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Keys</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>K</span>, <span class='ident'>V</span><span class='op'>&gt;</span> {
         <span class='kw'>fn</span> <span class='ident'>first</span><span class='op'>&lt;</span><span class='ident'>A</span>, <span class='ident'>B</span><span class='op'>&gt;</span>((<span class='ident'>a</span>, _): (<span class='ident'>A</span>, <span class='ident'>B</span>)) <span class='op'>-&gt;</span> <span class='ident'>A</span> { <span class='ident'>a</span> }
@@ -1473,8 +1404,6 @@
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// # Examples</span>
     <span class='doccomment'>/// ```</span>
-    <span class='doccomment'>/// # extern crate linked_hash_map;</span>
-    <span class='doccomment'>/// # fn main() {</span>
     <span class='doccomment'>/// use linked_hash_map::LinkedHashMap;</span>
     <span class='doccomment'>///</span>
     <span class='doccomment'>/// let mut map = LinkedHashMap::new();</span>
@@ -1487,7 +1416,6 @@
     <span class='doccomment'>/// assert_eq!(&amp;30, values.next().unwrap());</span>
     <span class='doccomment'>/// assert_eq!(&amp;20, values.next().unwrap());</span>
     <span class='doccomment'>/// assert_eq!(None, values.next());</span>
-    <span class='doccomment'>/// # }</span>
     <span class='doccomment'>/// ```</span>
     <span class='kw'>pub</span> <span class='kw'>fn</span> <span class='ident'>values</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span><span class='op'>&gt;</span>(<span class='kw-2'>&amp;</span><span class='lifetime'>&#39;a</span> <span class='self'>self</span>) <span class='op'>-&gt;</span> <span class='ident'>Values</span><span class='op'>&lt;</span><span class='lifetime'>&#39;a</span>, <span class='ident'>K</span>, <span class='ident'>V</span><span class='op'>&gt;</span> {
         <span class='kw'>fn</span> <span class='ident'>second</span><span class='op'>&lt;</span><span class='ident'>A</span>, <span class='ident'>B</span><span class='op'>&gt;</span>((_, <span class='ident'>b</span>): (<span class='ident'>A</span>, <span class='ident'>B</span>)) <span class='op'>-&gt;</span> <span class='ident'>B</span> { <span class='ident'>b</span> }
